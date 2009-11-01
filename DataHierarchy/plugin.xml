@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            allowMultiple="true"
+            category="org.eclipse.jdt.ui.java"
+            class="de.loskutov.dh.views.DataHierarchyView"
+            icon="platform:/plugin/org.eclipse.jdt.ui/icons/full/elcl16/ch_callees.gif"
+            id="de.loskutov.dh.views.DataHierarchyView"
+            name="Data Hierarchy">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.jdt.ui.JavaPerspective">
+         <view
+               ratio="0.5"
+               relative="org.eclipse.ui.views.ProblemView"
+               relationship="stack"
+               id="de.loskutov.dh.views.DataHierarchyView">
+         </view>
+         <viewShortcut
+               id="de.loskutov.dh.views.DataHierarchyView">
+         </viewShortcut>
+         <!-- <showInPart
+               id="de.loskutov.dh.views.DataHierarchyView">
+         </showInPart> -->
+      </perspectiveExtension>
+   </extension>
+   <extension
+         id="DataHierarchy.viewActions"
+         point="org.eclipse.ui.viewActions">
+      <viewContribution
+            id="DataHierarchy.viewActions"
+            targetID="de.loskutov.dh.views.DataHierarchyView">
+         <action
+               class="de.loskutov.dh.actions.PinViewAction"
+               icon="platform:/plugin/org.eclipse.search/icons/full/elcl16/pin_view.gif"
+               id="DataHierarchy.pinView"
+               label="Pin the Data Hierarchy View"
+               style="toggle"
+               toolbarPath="additions"
+               tooltip="Pin the Data Hierarchy View">
+         </action>
+         <action
+               class="de.loskutov.dh.actions.ExpandCollapseAction"
+               icon="platform:/plugin/org.eclipse.search/icons/full/elcl16/collapseall.gif"
+               id="DataHierarchy.collapseAll"
+               label="Collapse All"
+               style="push"
+               toolbarPath="expand"
+               tooltip="Collapse All">
+         </action>
+         <action
+               class="de.loskutov.dh.actions.ExpandCollapseAction"
+               icon="platform:/plugin/org.eclipse.search/icons/full/elcl16/expandall.gif"
+               id="DataHierarchy.expandAll"
+               label="Expand All"
+               style="push"
+               toolbarPath="expand"
+               tooltip="Expand All">
+         </action>
+         <action
+               class="de.loskutov.dh.actions.CancelSearchAction"
+               disabledIcon="platform:/plugin/org.eclipse.search/icons/full/dlcl16/stop.gif"
+               icon="platform:/plugin/org.eclipse.search/icons/full/elcl16/stop.gif"
+               id="DataHierarchy.cancelSearch"
+               label="Cancel Current Search"
+               style="push"
+               toolbarPath="run"
+               tooltip="Cancel Current Search">
+         </action>
+         <action
+               class="de.loskutov.dh.actions.SearchAgainAction"
+               definitionId="org.eclipse.ui.file.refresh"
+               disabledIcon="platform:/plugin/org.eclipse.search/icons/full/dlcl16/search_again.gif"
+               icon="platform:/plugin/org.eclipse.search/icons/full/elcl16/search_again.gif"
+               id="DataHierarchy.searchAgain"
+               label="Search Again"
+               style="push"
+               toolbarPath="run"
+               tooltip="Search Again">
+         </action>
+         <action
+               class="de.loskutov.dh.actions.RemoveElementAction"
+               definitionId="org.eclipse.ui.edit.delete"
+               disabledIcon="platform:/plugin/org.eclipse.jdt.ui/icons/full/dlcl16/remove_exc.gif"
+               enablesFor="+"
+               icon="platform:/plugin/org.eclipse.jdt.ui/icons/full/elcl16/remove_exc.gif"
+               id="DataHierarchy.removeElement"
+               label="Remove Selected Matches"
+               style="push"
+               toolbarPath="edit"
+               tooltip="Remove Selected Matches">
+         </action>
+         <action
+               class="de.loskutov.dh.actions.AddToFilterAction"
+               disabledIcon="platform:/plugin/org.eclipse.jdt.ui/icons/full/dlcl16/exclusion_filter_attrib.gif"
+               icon="platform:/plugin/org.eclipse.jdt.ui/icons/full/elcl16/exclusion_filter_attrib.gif"
+               id="DataHierarchy.addFilter"
+               label="Add To Filter..."
+               menubarPath="additions"
+               style="push"
+               toolbarPath="edit"
+               tooltip="Add To Filter...">
+         </action>
+         <action
+               class="de.loskutov.dh.actions.ShowReferencesAction"
+               icon="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/search_ref_obj.gif"
+               id="DataHierarchy.showReferences"
+               label="Show &apos;References to&apos;"
+               style="toggle"
+               toolbarPath="additions"
+               tooltip="Show &apos;References to&apos; for each element">
+         </action>
+         <menu
+               id="DataHierarchy.scopeMenu"
+               label="Search Scope"
+               path="options">
+            <groupMarker
+                  name="de.loskutov.DataHierarchy.scopes">
+            </groupMarker>
+         </menu>
+         <menu
+               id="DataHierarchy.refMenu"
+               label="Field References"
+               path="options">
+            <groupMarker
+                  name="de.loskutov.DataHierarchy.refs">
+            </groupMarker>
+         </menu>
+         <action
+               class="de.loskutov.dh.actions.SelectSeachScopeAction"
+               id="DataHierarchy.scope.workspace"
+               label="Workspace"
+               menubarPath="DataHierarchy.scopeMenu/scopes"
+               style="radio">
+         </action>
+         <action
+               class="de.loskutov.dh.actions.SelectSeachScopeAction"
+               id="DataHierarchy.scope.hierarchy"
+               label="Hierarchy"
+               menubarPath="DataHierarchy.scopeMenu/scopes"
+               style="radio">
+         </action>
+         <action
+               class="de.loskutov.dh.actions.SelectSeachScopeAction"
+               id="DataHierarchy.scope.project"
+               label="Project"
+               menubarPath="DataHierarchy.scopeMenu/scopes"
+               state="true"
+               style="radio">
+         </action>
+         <action
+               class="de.loskutov.dh.actions.SelectReferencesModeAction"
+               id="DataHierarchy.ref.write"
+               label="Write"
+               menubarPath="DataHierarchy.refMenu/refs"
+               style="radio">
+         </action>
+         <action
+               class="de.loskutov.dh.actions.SelectReferencesModeAction"
+               id="DataHierarchy.ref.read"
+               label="Read"
+               menubarPath="DataHierarchy.refMenu/refs"
+               style="radio">
+         </action>
+         <action
+               class="de.loskutov.dh.actions.SelectReferencesModeAction"
+               id="DataHierarchy.ref.all"
+               label="All"
+               menubarPath="DataHierarchy.refMenu/refs"
+               state="true"
+               style="radio">
+         </action>
+      </viewContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            id="DataHierarchy.searchInFolders"
+            objectClass="org.eclipse.jdt.core.IOpenable">
+         <action
+               class="de.loskutov.dh.actions.SelectFolderAction"
+               icon="platform:/plugin/org.eclipse.jdt.ui/icons/full/elcl16/ch_callees.gif"
+               id="DataHierarchy.searchInFolders"
+               label="Open Data Hierarchy"
+               menubarPath="group.open">
+               <!-- group.search -->
+         </action>
+      </objectContribution>
+      <objectContribution
+            adaptable="true"
+            id="DataHierarchy.searchInTypes"
+            objectClass="org.eclipse.jdt.core.IType">
+         <action
+               class="de.loskutov.dh.actions.SelectFolderAction"
+               icon="platform:/plugin/org.eclipse.jdt.ui/icons/full/elcl16/ch_callees.gif"
+               id="DataHierarchy.searchInFolders"
+               label="Open Data Hierarchy"
+               menubarPath="group.open">
+         </action>
+      </objectContribution>
+      <objectContribution
+            adaptable="true"
+            id="DataHierarchy.searchInFields"
+            objectClass="org.eclipse.jdt.core.IField">
+         <action
+               class="de.loskutov.dh.actions.SelectFolderAction"
+               icon="platform:/plugin/org.eclipse.jdt.ui/icons/full/elcl16/ch_callees.gif"
+               id="DataHierarchy.searchInFolders"
+               label="Open Data Hierarchy"
+               menubarPath="group.open">
+         </action>
+      </objectContribution>
+      <objectContribution
+            adaptable="false"
+            id="DataHierarchy.objectContribution1"
+            objectClass="de.loskutov.dh.tree.TreeElement">
+         <action
+               class="de.loskutov.dh.actions.SearchAgainAction"
+               definitionId="org.eclipse.ui.file.refresh"
+               icon="platform:/plugin/org.eclipse.search/icons/full/elcl16/search_again.gif"
+               id="DataHierarchy.action1"
+               label="Search Again"
+               menubarPath="group.search">
+         </action>
+         <action
+               class="de.loskutov.dh.actions.RemoveElementAction"
+               definitionId="org.eclipse.ui.edit.delete"
+               icon="platform:/plugin/org.eclipse.jdt.ui/icons/full/elcl16/remove_exc.gif"
+               id="DataHierarchy.action3"
+               label="Remove"
+               menubarPath="group.edit">
+         </action>
+         <action
+               class="de.loskutov.dh.actions.AddToFilterAction"
+               icon="platform:/plugin/org.eclipse.jdt.ui/icons/full/elcl16/exclusion_filter_attrib.gif"
+               id="DataHierarchy.action2"
+               label="Add To Filter..."
+               menubarPath="group.edit">
+         </action>
+         <action
+               class="de.loskutov.dh.actions.SelectFolderAction"
+               id="DataHierarchy.focusOn"
+               label="Focus on Selection"
+               menubarPath="group.search">
+         </action>
+      </objectContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="de.loskutov.dh.actions.RemoveElementAction"
+            commandId="org.eclipse.ui.edit.delete">
+          <activeWhen>
+           <with variable="activePartId">
+            <equals value="de.loskutov.dh.views.DataHierarchyView"/>
+           </with>
+          </activeWhen>
+          <enabledWhen>
+             <with
+                   variable="activePartId">
+                <equals
+                      value="de.loskutov.dh.views.DataHierarchyView">
+                </equals>
+             </with>
+          </enabledWhen>
+
+      </handler>
+      <handler
+            class="de.loskutov.dh.actions.SearchAgainAction"
+            commandId="org.eclipse.ui.file.refresh">
+         <activeWhen>
+            <with
+                  variable="activePartId">
+               <equals
+                     value="de.loskutov.dh.views.DataHierarchyView">
+               </equals>
+            </with>
+         </activeWhen>
+         <enabledWhen>
+            <with
+                  variable="activePartId">
+               <equals
+                     value="de.loskutov.dh.views.DataHierarchyView">
+               </equals>
+            </with>
+         </enabledWhen>
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.adapters">
+      <factory
+            adaptableType="de.loskutov.dh.tree.TreeElement"
+            class="de.loskutov.dh.tree.ElementAdapterFactory">
+         <adapter
+               type="org.eclipse.jdt.core.IJavaElement">
+         </adapter>
+      </factory>
+      <factory
+            adaptableType="de.loskutov.dh.tree.DelayedJavaElement"
+            class="de.loskutov.dh.tree.ElementAdapterFactory">
+         <adapter
+               type="org.eclipse.jdt.core.IJavaElement">
+         </adapter>
+      </factory>
+   </extension>
+   <extension
+         point="org.eclipse.ui.actionSetPartAssociations">
+      <actionSetPartAssociation
+            targetID="org.eclipse.jdt.ui.A_OpenActionSet">
+         <part
+               id="de.loskutov.dh.views.DataHierarchyView">
+         </part>
+      </actionSetPartAssociation>
+   </extension>
+   <extension
+         point="org.eclipse.ui.actionSetPartAssociations">
+      <actionSetPartAssociation
+            targetID="org.eclipse.jdt.ui.CodingActionSet">
+         <part
+               id="de.loskutov.dh.views.DataHierarchyView">
+         </part>
+      </actionSetPartAssociation>
+   </extension>
+   <extension
+         point="org.eclipse.ui.actionSetPartAssociations">
+      <actionSetPartAssociation
+            targetID="org.eclipse.jdt.ui.SearchActionSet">
+         <part
+               id="de.loskutov.dh.views.DataHierarchyView">
+         </part>
+      </actionSetPartAssociation>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="de.loskutov.dh.preferences.PreferencesInitializer">
+      </initializer>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            category="org.eclipse.jdt.ui.preferences.JavaBasePreferencePage"
+            class="de.loskutov.dh.preferences.DataHierarchyPreferencePage"
+            id="DataHierarchy.globalPrefPage"
+            name="Data Hierarchy View">
+      </page>
+   </extension>
+      <!--
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="DataHierarchy"
+            description="Deletes selected results from view"
+            id="DataHierarchy.removeElementCmd"
+            name="Delete">
+      </command>
+      <category
+            id="DataHierarchy"
+            name="Browse Fields">
+      </category>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="DataHierarchy.removeElementCmd"
+            contextId="DataHierarchy.viewContext"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="DEL">
+      </key>
+   </extension>
+   <extension
+         point="org.eclipse.ui.contexts">
+      <context
+            id="DataHierarchy.viewContext"
+            name="Browse Fields View"
+            parentId="org.eclipse.ui.contexts.window">
+      </context>
+   </extension>
+
+   <extension
+         point="org.eclipse.search.searchPages">
+      <page
+            class="DataHierarchy.SearchPage1"
+            id="DataHierarchy.page1"
+            label="label">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.search.searchResultViewPages">
+      <viewPage
+            class="DataHierarchy.SearchResultPage1"
+            id="DataHierarchy.viewPage1"
+            searchResultClass="DataHierarchy.SearchResult1">
+      </viewPage>
+   </extension>
+ -->
+</plugin>
