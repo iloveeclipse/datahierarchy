@@ -92,6 +92,9 @@ public class SearchAgainAction implements IViewActionDelegate, IHandler, IObject
     }
 
     public void setActivePart(IAction action, IWorkbenchPart targetPart) {
+        if (targetPart != null && !(targetPart instanceof IViewPart)) {
+            return;
+        }
         init((IViewPart) targetPart);
     }
 
