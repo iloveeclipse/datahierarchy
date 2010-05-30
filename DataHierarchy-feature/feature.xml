@@ -2,7 +2,7 @@
 <feature
       id="DataHierarchy"
       label="DataHierarchy"
-      version="0.0.3.qualifier"
+      version="1.0.0.qualifier"
       provider-name="Andrei Loskutov"
       plugin="de.loskutov.DataHierarchy">
 
@@ -25,7 +25,7 @@
 
    <requires>
       <import plugin="org.eclipse.ui"/>
-      <import plugin="org.eclipse.core.runtime" version="3.4.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.runtime" version="3.5.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.jdt"/>
       <import plugin="org.eclipse.jdt.core"/>
       <import plugin="org.eclipse.jdt.ui"/>
