@@ -3,7 +3,7 @@
       id="DataHierarchy"
       label="DataHierarchy"
       version="1.0.0.qualifier"
-      provider-name="Andrei Loskutov"
+      provider-name="Andrey Loskutov"
       plugin="de.loskutov.DataHierarchy">
 
    <description url="http://andrei.gmxhome.de/datahierarchy/index.html">
@@ -11,11 +11,11 @@
    </description>
 
    <copyright url="http://andrei.gmxhome.de/datahierarchy/copyright.html">
-      Copyright (c) 2009 by Andrei Loskutov &lt;Loskutov@gmx.de&gt;. All rights reserved.
+      Copyright (c) 2009 - 2013 by Andrey Loskutov &lt;Loskutov@gmx.de&gt;. All rights reserved.
    </copyright>
 
    <license url="http://www.eclipse.org/legal/epl-v10.html">
-       Copyright (c) 2009 - 2010 Andrei Loskutov, licensed under the Eclipse Public License 1.0.
+       Copyright (c) 2009 - 2013 Andrey Loskutov, licensed under the Eclipse Public License 1.0.
    </license>
 
    <url>
