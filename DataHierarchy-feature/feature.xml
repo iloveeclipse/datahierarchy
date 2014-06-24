@@ -2,7 +2,7 @@
 <feature
       id="DataHierarchy"
       label="DataHierarchy"
-      version="1.0.0.qualifier"
+      version="1.0.1.qualifier"
       provider-name="Andrey Loskutov"
       plugin="de.loskutov.DataHierarchy">
 
@@ -11,7 +11,7 @@
    </description>
 
    <copyright url="http://andrei.gmxhome.de/datahierarchy/copyright.html">
-      Copyright (c)2002 - 2013 by Andrey Loskutov &lt;Loskutov@gmx.de&gt;.
+      Copyright (c)2002 - 2014 by Andrey Loskutov &lt;Loskutov@gmx.de&gt;.
 All rights reserved.
    </copyright>
 
@@ -26,7 +26,7 @@ All rights reserved.
 
    <requires>
       <import plugin="org.eclipse.ui"/>
-      <import plugin="org.eclipse.core.runtime" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.runtime" version="3.6.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.jdt"/>
       <import plugin="org.eclipse.jdt.core"/>
       <import plugin="org.eclipse.jdt.ui"/>
