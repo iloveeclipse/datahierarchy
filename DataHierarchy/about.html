@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Data Hierarchy plugin for Eclipse</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="author" content="Andrey Loskutov" />
+<meta name="copyright" content="Copyright 2009 Andrey Loskutov" />
+<meta name="description" content="Data Hierarchy plugin for Eclipse shows data dependencies in Java classes" />
+<meta name="keywords" content="Java, Eclipse, Plugin, Data, Hierarchy, JDT, Tool, Source, Code, Analysis, Programmer, Loskutov, Andrei" />
+<meta name="revisit-after" content="3 Days" />
+<meta name="robots" content="index, follow" />
+<meta name="distribution" content="global" />
+<meta name="rating" content="General" />
+<meta name="audience" content="All" />
+<link rel="stylesheet" href="http://andrei.gmxhome.de/styles/styles.css" type="text/css" />
+<link rel="SHORTCUT ICON" href="http://andrei.gmxhome.de/favicon.ico" />
+</head>
+<body>
+<table width="86%" border="0" align="center" cellpadding="8" cellspacing="0" class="mainTable">
+  <tr>
+    <td> <a href="http://andrei.gmxhome.de/index.html" class="box">Home</a> | <a href="http://andrei.gmxhome.de/eclipse.html" class="box">Eclipse
+        plugins</a> <strong>-&gt;</strong> <span class="menu">Data Hierarchy</span></td>
+    <td align="right">
+    <script type="text/javascript">
+      (function() {
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://apis.google.com/js/plusone.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+      })();
+    </script>
+    <div align="right" class="g-plusone" data-size="small" data-href="http://andrei.gmxhome.de"></div>
+    </td>
+    <td align="right"><a href="http://plus.google.com/u/0/113794713998126448910" class="box">+Andrey</a> | <a href="http://andrei.gmxhome.de/privat.html" class="box">About</a></td>
+  </tr>
+</table>
+<br />
+<table width="86%" border="0" align="center" cellpadding="20" cellspacing="0" class="mainTable">
+  <tr>
+    <td>
+		<a href="http://www.eclipse.org/index.html" class="none" title="Eclipse ready"><img src="http://andrei.gmxhome.de/images/rea_eclipse_pos_logo_fc_sm.jpg" alt="Eclipse ready" width="140" height="79" border="0" align="right" class="none" /></a>
+		<h1>Data Hierarchy   plugin for Eclipse</h1>
+    <blockquote>
+    <p>  The question I very often have is: which objects (recursively) are loaded in memory if a particular object is created? </p>
+    <p>If you know the Call Hierarchy plugin, you will find the Data Hierarchy very similar. It searches selected Java classes for declared fields, and starting with the found &quot;Data&quot; it recursively looks for fields which are declared on found classes (&quot;Hierarchy&quot;). At the end you can see kind of &quot;Data Hierarchy&quot; tree. </p>
+    <p>Please note, that the plugin can not detect reflection based data, data inside non-generic collections, data which is stored as &quot;Object&quot; etc. </p>
+    <p>This is a <strong>very rough estimation</strong> of the real data hierarchy, but works perfectly for a quick walk over the data structures/dependencies for code reviews. Note: for a full and precise analysis you have to use profiler!</p>
+    <p>Additionally plugin allows to restrict the search for static fields only. </p>
+    <p>This programm is free, see <a href="copyright.html" class="box">copyright</a>.</p>
+    </blockquote>
+<p class="titel">Installation</p>
+<blockquote>
+    <p><strong class="red">Note</strong>: Data Hierarchy plugin requires JDK 1.5 or newer to run! </p>
+    <p>Please use Eclipse update
+      manager to install  this plugin.</p>
+    <p>Eclipse 3.4:</p>
+    <blockquote>
+      <p>Go to &quot;Help -&gt; Software Updates -&gt; Find
+        and Install... -&gt; Search for new features to install -&gt; Next -&gt; New
+        Remote Site...&quot; </p>
+    </blockquote>
+    <p>Eclipse 3.5:</p>
+    <blockquote>
+      <p>Go to &quot;Help -&gt; Install new Software... -&gt; Work with:&quot; </p>
+    </blockquote>
+    <p>and use the <strong>http://andrei.gmxhome.de/eclipse/</strong> as
+      url.</p>
+</blockquote>
+<p class="titel">Manual download</p>
+<blockquote>
+  <p><a href="http://andrei.gmxhome.de/datahierarchy/links.html" class="box">Here</a></p>
+  <p><a href="http://code.google.com/a/eclipselabs.org/p/datahierarchy/source/checkout" class="box">Browse source  code</a></p>
+</blockquote>
+<p class="titel">Usage</p>
+<ol>
+  <ol>
+    <li>
+      <p> Select a class or package in the  Package Explorer, right click and choose &quot;<span class="box"><img src="../images/data_hierarchy.gif" width="16" height="16" border="0" align="absmiddle" /> Open Data Hierarchy&quot; action</span>. </p>
+    </li>
+    <li>
+      <p> Select a class or package in the  Package Explorer, press &lt;ctrl&gt; + 3, then type &quot;<span class="box">Open Data Hierarchy</span>&quot;, then &lt;enter&gt; </p>
+    </li>
+    <li>
+      <p>Go to Window-&gt;Preferences-&gt;General-&gt;Keys. Change &quot;Filters&quot; to show unbound commands. Type <span class="box">&lt;Open Data Hierarchy</span>&gt; in the filter. Bind the command to preferred key sequence. Now you can select a class or package in the  Package Explorer and use your own shortcut to open Data Hierarchy view. </p>
+    </li>
+    </ol>
+    At the end, you should see something like this:
+</ol>
+<table border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td class="border"><img src="../images/data_hierarchy_view.png" alt="AnyEdit import/export working sets wizards" width="752" height="875" border="0" /></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p class="titel">Feedback</p>
+<blockquote>
+    <p><script type="text/javascript" src="http://w.sharethis.com/button/sharethis.js#publisher=fef764dd-3b8b-4213-85a0-a3b7a14d472d&amp;type=website&amp;style=rotate"></script></p>
+    <p>Please send comments to <img src="http://andrei.gmxhome.de/images/loskutov.gif" alt="loskutov" width="130" height="12" align="top" /></p>
+    <p><a href="http://code.google.com/a/eclipselabs.org/p/datahierarchy/issues/list" class="box">Open issues / Report new issues </a></p>
+		<table width="100%" border="0" cellspacing="0" cellpadding="3">
+        <tr>
+          <td nowrap>Vote for Data Hierarchy at <a href="http://marketplace.eclipse.org/content/data-hierarchy">Eclipse Marketplace</a></td>
+          <td><script type="text/javascript">url_site = 'http://marketplace.eclipse.org/node/928'</script>
+			<script src="http://marketplace.eclipse.org/sites/all/modules/drigg_external/js/button.js" type="text/javascript"></script></td>
+        </tr>
+        <tr>
+          <td width="36%">or add Data Hierarchy to your stack at <a href="http://www.ohloh.net/p/DataHierarchy">Ohloh</a></td>
+          <td width="64%"><script type="text/javascript" src="http://www.ohloh.net/p/333906/widgets/project_users.js?style=red"></script></td>
+        </tr>
+        <tr>
+          <td>Support development of the plugin:</td>
+          <td>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_s-xclick" />
+<input type="hidden" name="hosted_button_id" value="R5SHJLNGUXKHU" />
+<input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG_global.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online." />
+<!--<img alt="" border="0" src="https://www.paypal.com/de_DE/i/scr/pixel.gif" width="1" height="1">-->
+</form>
+		  </td>
+        </tr>
+      </table>
+</blockquote>
+<p class="titel">History</p>
+<blockquote>
+  <p class="red">New in version 1.0.1 (Eclipse  3.6 - 4.4) [24.06.2014] </p>
+  <ul>
+    <li>
+      <p>Requires Java 1.6 and Eclipse 3.6 as minimal target environment.</p>
+    </li>
+  </ul>
+  <p class="red">New in version 1.0.0 (Eclipse  3.5 - 3.6) [30.05.2010] </p>
+  <ul>
+    <li>
+      <p>Minor fixes. Updated EPL notice and support links. </p>
+    </li>
+  </ul>
+  <p class="red">New in version 0.0.3 (Eclipse  3.4) [28.06.2009] </p>
+  <ul>
+    <li>
+      <p>Fixed issue #1:  &quot;<a href="http://code.google.com/a/eclipselabs.org/p/datahierarchy/issues/detail?id=1&can=1">Data from base classes could be included in hierarchy</a>&quot;</p>
+    </li>
+    <li>
+      <p>Added type/field  caching for faster searches on recurrent data</p>
+    </li>
+    <li>
+      <p>Search uses now all available processors  </p>
+    </li>
+    <li>
+      <p>Added &quot;Search Again&quot; (F5) action, which uses current selection</p>
+    </li>
+    <li>
+      <p>Added &quot;Focus on 'Selection'&quot; action , which uses current selection</p>
+    </li>
+    <li>
+      <p>Added workaround for JDT <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=237200">bug 237200</a></p>
+    </li>
+    <li>
+      <p>Different bug fixes </p>
+    </li>
+  </ul>
+  <p class="red">New in version 0.0.2 (Eclipse  3.4) [05.05.2009] </p>
+  <ul>
+    <li>
+      <p>First public version</p>
+    </li>
+    </ul>
+  </blockquote>
+	<p class="titel">Some project statistics by <a href="http://www.ohloh.net/p/DataHierarchy">Ohloh</a> </p>
+      <blockquote>
+        <div>
+          <script type="text/javascript" src="http://www.ohloh.net/p/333906/widgets/project_cocomo.js"></script>
+        </div>
+      </blockquote>	</td>
+</tr>
+</table>
+
+<p align="center"><i><small>Last changed at:
+  <!-- #BeginDate format:Br1m -->29.05.10  21:26<!-- #EndDate -->
+</small></i></p>
+</body>
+</html>
