@@ -24,12 +24,14 @@ public class PinViewAction implements IViewActionDelegate {
 
     private DataHierarchyView view;
 
+    @Override
     public void init(IViewPart part) {
         if (part instanceof DataHierarchyView) {
             this.view = (DataHierarchyView) part;
         }
     }
 
+    @Override
     public void run(IAction action) {
         if (view == null) {
             return;
@@ -37,6 +39,7 @@ public class PinViewAction implements IViewActionDelegate {
         view.setPinned(!view.isPinned());
     }
 
+    @Override
     public void selectionChanged(IAction action, ISelection selection) {
         // noop
     }

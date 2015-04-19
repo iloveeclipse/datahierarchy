@@ -72,6 +72,7 @@ public class DataHierarchyPreferencePage extends FieldEditorPreferencePage imple
         return super.createContents(defPanel);
     }
 
+    @Override
     public void init(IWorkbench workbench) {
         // noop
     }

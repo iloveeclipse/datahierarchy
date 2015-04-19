@@ -41,6 +41,7 @@ public class AddToFilterAction implements IViewActionDelegate, IObjectActionDele
         super();
     }
 
+    @Override
     public void run(IAction action) {
         List<String> typesToFilter = getTypesToFilter(selection2);
 
@@ -64,6 +65,7 @@ public class AddToFilterAction implements IViewActionDelegate, IObjectActionDele
 //        search.run(action);
     }
 
+    @Override
     public void selectionChanged(IAction action, ISelection selection) {
         if (!(selection instanceof IStructuredSelection)) {
             selection2 = null;
@@ -96,6 +98,7 @@ public class AddToFilterAction implements IViewActionDelegate, IObjectActionDele
         return typesToFilter;
     }
 
+    @Override
     public void init(IViewPart view) {
         if (!(view instanceof DataHierarchyView)) {
             return;
@@ -103,6 +106,7 @@ public class AddToFilterAction implements IViewActionDelegate, IObjectActionDele
         this.part = (DataHierarchyView) view;
     }
 
+    @Override
     public void setActivePart(IAction action, IWorkbenchPart targetPart) {
         init((IViewPart) targetPart);
     }

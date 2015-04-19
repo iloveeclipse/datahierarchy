@@ -24,6 +24,7 @@ public class CancelSearchAction implements IViewActionDelegate {
 
     private IAction action;
 
+    @Override
     public void init(IViewPart view) {
         IJobChangeListener listener = new JobChangeAdapter() {
             @Override
@@ -45,11 +46,13 @@ public class CancelSearchAction implements IViewActionDelegate {
         Job.getJobManager().addJobChangeListener(listener);
     }
 
+    @Override
     public void run(IAction newAction) {
         Job.getJobManager().cancel(DataHierarchyPlugin.JOB_FAMILY);
         newAction.setEnabled(false);
     }
 
+    @Override
     public void selectionChanged(IAction newAction, ISelection selection) {
         if (this.action == null) {
             newAction.setEnabled(Job.getJobManager().find(DataHierarchyPlugin.JOB_FAMILY).length > 0);

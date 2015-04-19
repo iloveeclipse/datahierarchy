@@ -26,8 +26,6 @@ import org.eclipse.ui.views.tasklist.ITaskListResourceAdapter;
  * A container element in the (java model based) tree, which can contain other containers
  * of specified type
  *
- * @author Andrei
- *
  * @param <P> this element type (parent)
  * @param <C> child element type
  */
@@ -37,11 +35,9 @@ public class TreeElement<P, C> implements IAdaptable {
     private final String name;
     private TreeElement<?, P> parent;
     private volatile boolean initialized;
-    private final Class<C> childrenType;
     private boolean virtual;
 
     public TreeElement(String name, P data, Class<C> childrenType) {
-        this.childrenType = childrenType;
         this.name = name == null ? "?" : name;
         this.data = data;
         children = new CopyOnWriteArraySet<TreeElement<C, ?>>();
@@ -64,7 +60,7 @@ public class TreeElement<P, C> implements IAdaptable {
         return getName();
     }
 
-    @SuppressWarnings("unchecked")
+    @Override
     public Object getAdapter(Class key) {
         if (ITaskListResourceAdapter.class == key) {
             // java.lang.ClassCastException:
@@ -106,9 +102,9 @@ public class TreeElement<P, C> implements IAdaptable {
     }
 
     public boolean addChild(TreeElement<C, ?> child) {
-        if(false && !childrenType.isAssignableFrom(child.data.getClass())){
-            return false;
-        }
+        //        if(false && !childrenType.isAssignableFrom(child.data.getClass())){
+        //            return false;
+        //        }
         boolean ok;
         synchronized (children) {
             TreeElement<C, ?> element = find(child.getData());

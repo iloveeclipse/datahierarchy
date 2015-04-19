@@ -32,10 +32,12 @@ public class SelectFolderAction implements IObjectActionDelegate {
         folders = new ArrayList<IJavaElement>();
     }
 
+    @Override
     public void setActivePart(IAction action, IWorkbenchPart targetPart) {
         // noop
     }
 
+    @Override
     public void run(IAction action) {
         try {
             DataHierarchyView view = (DataHierarchyView) PlatformUI.getWorkbench()
@@ -46,6 +48,7 @@ public class SelectFolderAction implements IObjectActionDelegate {
         }
     }
 
+    @Override
     public void selectionChanged(IAction action, ISelection selection) {
         folders.clear();
         List<IJavaElement> openables = SelectionHelper.getFromSelection(selection, IJavaElement.class);

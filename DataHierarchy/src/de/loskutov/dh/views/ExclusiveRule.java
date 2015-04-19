@@ -28,6 +28,7 @@ class ExclusiveRule implements ISchedulingRule {
         root = searchRoot;
     }
 
+    @Override
     public boolean isConflicting(ISchedulingRule rule) {
         if(this == rule){
             return true;
@@ -61,6 +62,7 @@ class ExclusiveRule implements ISchedulingRule {
         return false;
     }
 
+    @Override
     public boolean contains(ISchedulingRule rule) {
         return isConflicting(rule);
     }

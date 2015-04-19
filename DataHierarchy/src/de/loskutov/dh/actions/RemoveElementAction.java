@@ -35,10 +35,12 @@ public class RemoveElementAction implements IObjectActionDelegate, IHandler, IVi
         super();
     }
 
+    @Override
     public void setActivePart(IAction action, IWorkbenchPart targetPart) {
         this.part = targetPart;
     }
 
+    @Override
     public void run(IAction action) {
         if(!(part instanceof DataHierarchyView)){
             return;
@@ -47,18 +49,22 @@ public class RemoveElementAction implements IObjectActionDelegate, IHandler, IVi
         view.removeResults();
     }
 
+    @Override
     public void selectionChanged(IAction action, ISelection selection) {
         // noop
     }
 
+    @Override
     public void addHandlerListener(IHandlerListener handlerListener) {
         // noop
     }
 
+    @Override
     public void dispose() {
         // noop
     }
 
+    @Override
     public Object execute(ExecutionEvent event) throws ExecutionException {
         part = HandlerUtil.getActivePart(event);
         if (!(part instanceof DataHierarchyView)) {
@@ -69,18 +75,22 @@ public class RemoveElementAction implements IObjectActionDelegate, IHandler, IVi
         return null;
     }
 
+    @Override
     public boolean isEnabled() {
         return true;
     }
 
+    @Override
     public boolean isHandled() {
         return true;
     }
 
+    @Override
     public void removeHandlerListener(IHandlerListener handlerListener) {
         // noop
     }
 
+    @Override
     public void init(IViewPart view) {
         if (view instanceof DataHierarchyView) {
             part = view;

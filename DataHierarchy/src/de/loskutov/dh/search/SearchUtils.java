@@ -30,9 +30,6 @@ import org.eclipse.jdt.internal.corext.util.JavaModelUtil;
 import de.loskutov.dh.DataHierarchyPlugin;
 import de.loskutov.dh.tree.TreeElement;
 
-/**
- * @author Andrei
- */
 public class SearchUtils {
 
     static final List<String> PRIMITIVE_TYPES = Arrays.asList("B", "C", "D", "F", "I", "J", "S",
@@ -66,13 +63,13 @@ public class SearchUtils {
             addAlSuperTypesAndType(allTypesSet, (IType) element, monitor);
         } else if (element instanceof IJavaProject) {
             // XXX intentionally empty. The search is TOO slowly later...
-//            IJavaProject project = (IJavaProject) element;
-//            IPackageFragmentRoot[] roots = project.getPackageFragmentRoots();
-//            for (IPackageFragmentRoot root : roots) {
-//                if(!root.isArchive()) {
-//                    collectTypesFromPackageRoots(monitor, allTypesSet, root);
-//                }
-//            }
+            //            IJavaProject project = (IJavaProject) element;
+            //            IPackageFragmentRoot[] roots = project.getPackageFragmentRoots();
+            //            for (IPackageFragmentRoot root : roots) {
+            //                if(!root.isArchive()) {
+            //                    collectTypesFromPackageRoots(monitor, allTypesSet, root);
+            //                }
+            //            }
         }
         return allTypesSet.toArray(new IType[allTypesSet.size()]);
     }

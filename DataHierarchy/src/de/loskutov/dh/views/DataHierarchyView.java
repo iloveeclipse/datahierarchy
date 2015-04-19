@@ -154,6 +154,7 @@ public class DataHierarchyView extends ViewPart implements IShowInSource/*, ISho
         MenuManager menuMgr = new MenuManager("#PopupMenu");
         menuMgr.setRemoveAllWhenShown(true);
         menuMgr.addMenuListener(new IMenuListener() {
+            @Override
             public void menuAboutToShow(IMenuManager manager) {
                 DataHierarchyView.this.fillContextMenu(manager);
             }
@@ -271,12 +272,14 @@ public class DataHierarchyView extends ViewPart implements IShowInSource/*, ISho
 
     private void hookDoubleClickAction() {
         getViewer().addDoubleClickListener(new IDoubleClickListener() {
+            @Override
             public void doubleClick(DoubleClickEvent event) {
                 doubleClickAction.run();
             }
         });
     }
 
+    @Override
     public ShowInContext getShowInContext() {
         return new ShowInContext(null, selectionProvider.getSelection());
     }
@@ -330,6 +333,7 @@ public class DataHierarchyView extends ViewPart implements IShowInSource/*, ISho
 
     static void expandViewer(final TreeViewer treeViewer) {
         final Runnable expand = new Runnable() {
+            @Override
             public void run() {
                 treeViewer.expandToLevel(2);
             }
@@ -382,22 +386,27 @@ public class DataHierarchyView extends ViewPart implements IShowInSource/*, ISho
             viewer2.addSelectionChangedListener(this);
         }
 
+        @Override
         public void addSelectionChangedListener(ISelectionChangedListener listener) {
             listeners.add(listener);
         }
 
+        @Override
         public void removeSelectionChangedListener(ISelectionChangedListener listener) {
             listeners.remove(listener);
         }
 
+        @Override
         public IStructuredSelection getSelection() {
             return (IStructuredSelection) viewer2.getSelection();
         }
 
+        @Override
         public void setSelection(ISelection selection) {
             viewer2.setSelection(selection);
         }
 
+        @Override
         public void selectionChanged(SelectionChangedEvent event) {
             IStatusLineManager manager = getViewSite().getActionBars().getStatusLineManager();
             ISelection selection = event.getSelection();

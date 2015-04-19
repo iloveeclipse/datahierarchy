@@ -20,10 +20,12 @@ public class ExpandCollapseAction implements IViewActionDelegate {
 
     private DataHierarchyView view;
 
+    @Override
     public void init(IViewPart viewPart) {
         this.view = (DataHierarchyView) viewPart;
     }
 
+    @Override
     public void run(IAction action) {
         if("DataHierarchy.expandAll".equals(action.getId())){
             view.getViewer().expandAll();
@@ -33,6 +35,7 @@ public class ExpandCollapseAction implements IViewActionDelegate {
 
     }
 
+    @Override
     public void selectionChanged(IAction action, ISelection selection) {
         //
     }

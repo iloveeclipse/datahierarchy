@@ -34,6 +34,7 @@ public class SearchAgainAction implements IViewActionDelegate, IHandler, IObject
     private DataHierarchyView part;
     private List<TreeElement> elements;
 
+    @Override
     public void init(IViewPart view) {
         if(view instanceof DataHierarchyView){
             part = (DataHierarchyView) view;
@@ -42,6 +43,7 @@ public class SearchAgainAction implements IViewActionDelegate, IHandler, IObject
         }
     }
 
+    @Override
     public void run(IAction action) {
         if(part != null){
             Job.getJobManager().cancel(DataHierarchyPlugin.JOB_FAMILY);
@@ -56,19 +58,23 @@ public class SearchAgainAction implements IViewActionDelegate, IHandler, IObject
         }
     }
 
+    @Override
     public void selectionChanged(IAction action, ISelection selection) {
         elements = SelectionHelper.getFromSelection(selection, TreeElement.class);
     }
 
+    @Override
     public void addHandlerListener(IHandlerListener handlerListener) {
         // noop
 
     }
 
+    @Override
     public void dispose() {
         // noop
     }
 
+    @Override
     public Object execute(ExecutionEvent event) throws ExecutionException {
         IWorkbenchPart wpart = HandlerUtil.getActivePart(event);
         if (!(wpart instanceof DataHierarchyView)) {
@@ -79,18 +85,22 @@ public class SearchAgainAction implements IViewActionDelegate, IHandler, IObject
         return null;
     }
 
+    @Override
     public boolean isEnabled() {
         return true;
     }
 
+    @Override
     public boolean isHandled() {
         return true;
     }
 
+    @Override
     public void removeHandlerListener(IHandlerListener handlerListener) {
         // noop
     }
 
+    @Override
     public void setActivePart(IAction action, IWorkbenchPart targetPart) {
         if (targetPart != null && !(targetPart instanceof IViewPart)) {
             return;

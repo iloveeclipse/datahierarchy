@@ -264,6 +264,7 @@ final class JavaSearchJob extends Job  {
         }
         monitor.done();
         Runnable run = new Runnable() {
+            @Override
             public void run() {
                 updateViewer();
             }

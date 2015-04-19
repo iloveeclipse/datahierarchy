@@ -166,6 +166,7 @@ public class JavaActionsGroup extends ActionGroup {
             wrapperMap = new HashMap<ISelectionChangedListener, SelectionListenerHandler>();
         }
 
+        @Override
         public void addSelectionChangedListener(ISelectionChangedListener listener) {
             if (wrapperMap.get(listener) != null) {
                 return;
@@ -174,11 +175,13 @@ public class JavaActionsGroup extends ActionGroup {
             part.getSelectionProvider().addSelectionChangedListener(wrapperMap.get(listener));
         }
 
+        @Override
         public ISelection getSelection() {
             IStructuredSelection sel = part.getSelectionProvider().getSelection();
             return getRealSelection(sel);
         }
 
+        @Override
         public void removeSelectionChangedListener(ISelectionChangedListener listener) {
             if (wrapperMap.get(listener) == null) {
                 return;
@@ -187,6 +190,7 @@ public class JavaActionsGroup extends ActionGroup {
             part.getSelectionProvider().removeSelectionChangedListener(handler);
         }
 
+        @Override
         public void setSelection(ISelection selection) {
             part.getSelectionProvider().setSelection(selection);
         }
@@ -200,6 +204,7 @@ public class JavaActionsGroup extends ActionGroup {
             this.listener = listener;
         }
 
+        @Override
         public void selectionChanged(SelectionChangedEvent event) {
             IStructuredSelection selection2 = (IStructuredSelection) event.getSelection();
             IStructuredSelection realSelection = getRealSelection(selection2);
@@ -219,6 +224,7 @@ public class JavaActionsGroup extends ActionGroup {
             this.methodNames = methodName;
         }
 
+        @Override
         public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
             for (String name : methodNames) {
                 if (method.getName().equals(name)) {

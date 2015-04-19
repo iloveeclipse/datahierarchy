@@ -137,6 +137,7 @@ public class FilterListEditor extends FieldEditor {
         gd = new GridData(GridData.FILL_HORIZONTAL | GridData.VERTICAL_ALIGN_BEGINNING);
         addButton.setLayoutData(gd);
         addButton.addListener(SWT.Selection, new Listener() {
+            @Override
             public void handleEvent(Event e) {
                 editFilter();
             }
@@ -149,6 +150,7 @@ public class FilterListEditor extends FieldEditor {
         gd = getButtonGridData(removeButton);
         removeButton.setLayoutData(gd);
         removeButton.addListener(SWT.Selection, new Listener() {
+            @Override
             public void handleEvent(Event e) {
                 removeFilters();
             }
@@ -161,6 +163,7 @@ public class FilterListEditor extends FieldEditor {
         gd = getButtonGridData(enableAllButton);
         enableAllButton.setLayoutData(gd);
         enableAllButton.addListener(SWT.Selection, new Listener() {
+            @Override
             public void handleEvent(Event e) {
                 checkAllFilters(true);
             }
@@ -172,6 +175,7 @@ public class FilterListEditor extends FieldEditor {
         gd = getButtonGridData(disableAllButton);
         disableAllButton.setLayoutData(gd);
         disableAllButton.addListener(SWT.Selection, new Listener() {
+            @Override
             public void handleEvent(Event e) {
                 checkAllFilters(false);
             }
@@ -272,6 +276,7 @@ public class FilterListEditor extends FieldEditor {
         // traverse away to dialog's default button. Without this, hitting
         // CR in the text field closes the entire dialog.
         text.addListener(SWT.Traverse, new Listener() {
+            @Override
             public void handleEvent(Event event) {
                 event.doit = false;
             }
@@ -414,12 +419,14 @@ public class FilterListEditor extends FieldEditor {
         filterViewer.setInput(this);
 
         filterViewer.addCheckStateListener(new ICheckStateListener() {
+            @Override
             public void checkStateChanged(CheckStateChangedEvent event) {
                 Filter filter = (Filter) event.getElement();
                 fileFilterContentProvider.toggleFilter(filter);
             }
         });
         filterViewer.addSelectionChangedListener(new ISelectionChangedListener() {
+            @Override
             public void selectionChanged(SelectionChangedEvent event) {
                 ISelection selection = event.getSelection();
                 if (selection.isEmpty()) {
@@ -525,6 +532,7 @@ public class FilterListEditor extends FieldEditor {
         /**
          * @see ITableLabelProvider#getColumnText(Object, int)
          */
+        @Override
         public String getColumnText(Object object, int column) {
             if (column == 0) {
                 return ((Filter) object).getName();
@@ -543,6 +551,7 @@ public class FilterListEditor extends FieldEditor {
         /**
          * @see ITableLabelProvider#getColumnImage(Object, int)
          */
+        @Override
         public Image getColumnImage(Object object, int column) {
             return imgPkg;
         }
@@ -698,14 +707,17 @@ public class FilterListEditor extends FieldEditor {
         /**
          * @see IStructuredContentProvider#getElements(Object)
          */
+        @Override
         public Object[] getElements(Object inputElement) {
             return fFilters.toArray();
         }
 
+        @Override
         public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
             /** ignored */
         }
 
+        @Override
         public void dispose() {
             /** ignored */
         }

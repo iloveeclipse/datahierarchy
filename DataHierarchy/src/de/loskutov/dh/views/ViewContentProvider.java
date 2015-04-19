@@ -46,15 +46,18 @@ public class ViewContentProvider implements IStructuredContentProvider, ITreeCon
         this.view = view;
     }
 
+    @Override
     public void inputChanged(Viewer v, Object oldInput, Object newInput) {
         this.viewer = (TreeViewer) v;
         DelayedJavaElement.clearCache();
     }
 
+    @Override
     public void dispose() {
         DelayedJavaElement.clearCache();
     }
 
+    @Override
     public Object[] getElements(Object parent) {
         if (parent.equals(DataHierarchyView.class)) {
             if (invisibleRoot == null) {
@@ -65,6 +68,7 @@ public class ViewContentProvider implements IStructuredContentProvider, ITreeCon
         return getChildren(parent);
     }
 
+    @Override
     public Object getParent(Object child) {
         if (child instanceof TreeElement<?, ?>) {
             return ((TreeElement<?, ?>) child).getParent();
@@ -72,6 +76,7 @@ public class ViewContentProvider implements IStructuredContentProvider, ITreeCon
         return null;
     }
 
+    @Override
     public Object[] getChildren(Object parent) {
         if (parent instanceof TreeElement<?, ?>) {
             TreeElement<?, ?> treeElement = (TreeElement<?, ?>) parent;
@@ -129,6 +134,7 @@ public class ViewContentProvider implements IStructuredContentProvider, ITreeCon
 //        return children;
     }
 
+    @Override
     public boolean hasChildren(Object parent) {
         if (parent instanceof TreeElement<?, ?>) {
             // if(parent instanceof DelayedFolderElement){
@@ -174,6 +180,7 @@ public class ViewContentProvider implements IStructuredContentProvider, ITreeCon
         return view.getProgressService();
     }
 
+    @Override
     public Job sheduleJob(final DelayedJavaElement<?, ? extends IJavaElement> searchRoot){
         Job job = new JavaSearchJob("Searching in " + searchRoot .getJavaElement().getElementName() + "...",
                 searchRoot, this);
@@ -196,10 +203,12 @@ public class ViewContentProvider implements IStructuredContentProvider, ITreeCon
         return view.getLabelProvider();
     }
 
+    @Override
     public IJavaSearchScope createScope(IJavaElement elt) {
         return view.getSearchScope().createScope(elt);
     }
 
+    @Override
     public boolean get(int flag) {
         switch (flag) {
         case SEARCH_ARRAYS:
