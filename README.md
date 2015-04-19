@@ -1,5 +1,5 @@
 # datahierarchy
-Automatically exported from code.google.com/p/datahierarchy
+Originally hosted on code.google.com/p/datahierarchy
 
 The question I very often have is: which objects (recursively) are loaded in memory if a particular object is created?
 
@@ -12,5 +12,7 @@ The plugin can not detect reflection based data, data inside non-generic collect
 This is of course a very rough estimation of the real data hierarchy, but works perfectly for a quick walk over data structures/dependencies during code reviews.
 
 Additionally plugin allows to restrict the search for static fields only.
+
+[Home page](http://andrei.gmxhome.de/datahierarchy/index.html)
 
 You can install the plugin from [Eclipse Marketplace](https://marketplace.eclipse.org/content/data-hierarchy) or download from [bintray](https://bintray.com/iloveeclipse/plugins/DataHierarchy/view/files).
