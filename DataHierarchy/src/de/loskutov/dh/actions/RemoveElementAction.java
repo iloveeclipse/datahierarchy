@@ -1,10 +1,10 @@
 /*******************************************************************************
- * Copyright (c) 2009 Andrei Loskutov.
+ * Copyright (c) 2009 - 2015 Andrey Loskutov.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * Contributor:  Andrei Loskutov - initial API and implementation
+ * Contributor:  Andrey Loskutov - initial API and implementation
  *******************************************************************************/
 
 package de.loskutov.dh.actions;
@@ -23,10 +23,6 @@ import org.eclipse.ui.handlers.HandlerUtil;
 
 import de.loskutov.dh.views.DataHierarchyView;
 
-/**
- * @author Andrei
- *
- */
 public class RemoveElementAction implements IObjectActionDelegate, IHandler, IViewActionDelegate {
 
     private IWorkbenchPart part;

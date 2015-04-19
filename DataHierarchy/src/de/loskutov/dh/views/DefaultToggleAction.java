@@ -1,10 +1,10 @@
 /*******************************************************************************
- * Copyright (c) 2009 Andrei Loskutov.
+ * Copyright (c) 2009 - 2015 Andrey Loskutov.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * Contributor:  Andrei Loskutov - initial API and implementation
+ * Contributor:  Andrey Loskutov - initial API and implementation
  *******************************************************************************/
 
 package de.loskutov.dh.views;
@@ -22,7 +22,6 @@ import de.loskutov.dh.Messages;
  * Action image, text and tooltip will be initialized by default.
  * To use it, register IPropertyChangeListener and check for IAction.CHECKED
  * event name.
- * @author Andrei
  */
 public abstract class DefaultToggleAction extends Action {
 
@@ -44,10 +43,10 @@ public abstract class DefaultToggleAction extends Action {
         String imageFilePath = Messages.get(ACTION + "_" + myId + "_" + IMAGE);
         if(imageFilePath != null && imageFilePath.length() != 0) {
             setImageDescriptor(AbstractUIPlugin
-                .imageDescriptorFromPlugin(
-                        DataHierarchyPlugin.getDefault().getBundle()
-                        .getSymbolicName(),
-                        imageFilePath));
+                    .imageDescriptorFromPlugin(
+                            DataHierarchyPlugin.getDefault().getBundle()
+                            .getSymbolicName(),
+                            imageFilePath));
         }
 
         setText(Messages.get(ACTION + "_" + myId + "_" + TEXT));
