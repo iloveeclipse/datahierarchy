@@ -1,5 +1,7 @@
-# datahierarchy
+# Data Hierarchy
 Eclipse plugin showing data hierarchy for Java classes.
+
+<img src="http://andrei.gmxhome.de/images/data_hierarchy_view.png"/>
 
 The question I very often have is: which objects (recursively) are loaded in memory if a particular object is created?
 
