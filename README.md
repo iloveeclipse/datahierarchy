@@ -13,6 +13,7 @@ This is of course a very rough estimation of the real data hierarchy, but works 
 
 Additionally plugin allows to restrict the search for static fields only.
 
-[Home page](http://andrei.gmxhome.de/datahierarchy/index.html)
-
-You can install the plugin from [Eclipse Marketplace](https://marketplace.eclipse.org/content/data-hierarchy) or download from [bintray](https://bintray.com/iloveeclipse/plugins/DataHierarchy/view/files).
+  * [Home page](http://andrei.gmxhome.de/datahierarchy/index.html)
+  * [Eclipse update site](http://andrei.gmxhome.de/eclipse)
+  * [Eclipse Marketplace](https://marketplace.eclipse.org/content/data-hierarchy) 
+  * [Released files](https://bintray.com/iloveeclipse/plugins/DataHierarchy/view/files)
