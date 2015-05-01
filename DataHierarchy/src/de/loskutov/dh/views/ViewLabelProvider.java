@@ -9,11 +9,7 @@
 
 package de.loskutov.dh.views;
 
-import java.io.IOException;
-import java.net.URL;
-
 import org.eclipse.core.resources.IResource;
-import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.internal.ui.JavaPluginImages;
@@ -30,20 +26,16 @@ import de.loskutov.dh.DataHierarchyPlugin;
 import de.loskutov.dh.tree.TreeElement;
 
 class ViewLabelProvider extends JavaElementLabelProvider {
-    private static final String OCC_MATCH_ICON = "platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/occ_match.gif";
 
     ISharedImages sharedImages = JavaUI.getSharedImages();
 
     static Image referencesIcon;
     static {
-        try {
-            URL url = FileLocator.resolve(new URL(OCC_MATCH_ICON));
-            ImageDescriptor imd = ImageDescriptor.createFromURL(url);
+        ImageDescriptor imd = DataHierarchyPlugin.getImageDescriptor("$nl$/icons/obj16/occ_match.png");
+        if(imd != null){
             JavaElementImageDescriptor jDescr = new JavaElementImageDescriptor(imd, 0,
                     JavaElementImageProvider.BIG_SIZE);
             referencesIcon = jDescr.createImage(true);
-        } catch (IOException e) {
-            DataHierarchyPlugin.logError("resolve() failed for icon: " + OCC_MATCH_ICON, e);
         }
     }
 
