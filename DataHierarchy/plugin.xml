@@ -8,7 +8,7 @@
             allowMultiple="true"
             category="org.eclipse.jdt.ui.java"
             class="de.loskutov.dh.views.DataHierarchyView"
-            icon="platform:/plugin/org.eclipse.jdt.ui/icons/full/elcl16/ch_callees.gif"
+            icon="icons/elcl16/ch_callees.png"
             id="de.loskutov.dh.views.DataHierarchyView"
             name="Data Hierarchy">
       </view>
@@ -88,9 +88,9 @@
          <action
                class="de.loskutov.dh.actions.RemoveElementAction"
                definitionId="org.eclipse.ui.edit.delete"
-               disabledIcon="platform:/plugin/org.eclipse.jdt.ui/icons/full/dlcl16/remove_exc.gif"
+               disabledIcon="icons/dlcl16/remove_exc.png"
                enablesFor="+"
-               icon="platform:/plugin/org.eclipse.jdt.ui/icons/full/elcl16/remove_exc.gif"
+               icon="icons/elcl16/remove_exc.png"
                id="DataHierarchy.removeElement"
                label="Remove Selected Matches"
                style="push"
@@ -99,8 +99,8 @@
          </action>
          <action
                class="de.loskutov.dh.actions.AddToFilterAction"
-               disabledIcon="platform:/plugin/org.eclipse.jdt.ui/icons/full/dlcl16/exclusion_filter_attrib.gif"
-               icon="platform:/plugin/org.eclipse.jdt.ui/icons/full/elcl16/exclusion_filter_attrib.gif"
+               disabledIcon="icons/dlcl16/exclusion_filter_attrib.png"
+               icon="icons/elcl16/exclusion_filter_attrib.png"
                id="DataHierarchy.addFilter"
                label="Add To Filter..."
                menubarPath="additions"
@@ -110,7 +110,7 @@
          </action>
          <action
                class="de.loskutov.dh.actions.ShowReferencesAction"
-               icon="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/search_ref_obj.gif"
+               icon="icons/obj16/search_ref_obj.png"
                id="DataHierarchy.showReferences"
                label="Show &apos;References to&apos;"
                style="toggle"
@@ -187,7 +187,7 @@
             objectClass="org.eclipse.jdt.core.IOpenable">
          <action
                class="de.loskutov.dh.actions.SelectFolderAction"
-               icon="platform:/plugin/org.eclipse.jdt.ui/icons/full/elcl16/ch_callees.gif"
+               icon="icons/elcl16/ch_callees.png"
                id="DataHierarchy.searchInFolders"
                label="Open Data Hierarchy"
                menubarPath="group.open">
@@ -200,7 +200,7 @@
             objectClass="org.eclipse.jdt.core.IType">
          <action
                class="de.loskutov.dh.actions.SelectFolderAction"
-               icon="platform:/plugin/org.eclipse.jdt.ui/icons/full/elcl16/ch_callees.gif"
+               icon="icons/elcl16/ch_callees.png"
                id="DataHierarchy.searchInFolders"
                label="Open Data Hierarchy"
                menubarPath="group.open">
@@ -212,7 +212,7 @@
             objectClass="org.eclipse.jdt.core.IField">
          <action
                class="de.loskutov.dh.actions.SelectFolderAction"
-               icon="platform:/plugin/org.eclipse.jdt.ui/icons/full/elcl16/ch_callees.gif"
+               icon="icons/elcl16/ch_callees.png"
                id="DataHierarchy.searchInFolders"
                label="Open Data Hierarchy"
                menubarPath="group.open">
@@ -233,14 +233,14 @@
          <action
                class="de.loskutov.dh.actions.RemoveElementAction"
                definitionId="org.eclipse.ui.edit.delete"
-               icon="platform:/plugin/org.eclipse.jdt.ui/icons/full/elcl16/remove_exc.gif"
+               icon="icons/elcl16/remove_exc.png"
                id="DataHierarchy.action3"
                label="Remove"
                menubarPath="group.edit">
          </action>
          <action
                class="de.loskutov.dh.actions.AddToFilterAction"
-               icon="platform:/plugin/org.eclipse.jdt.ui/icons/full/elcl16/exclusion_filter_attrib.gif"
+               icon="icons/elcl16/exclusion_filter_attrib.png"
                id="DataHierarchy.action2"
                label="Add To Filter..."
                menubarPath="group.edit">
