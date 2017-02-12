@@ -39,7 +39,7 @@
             targetID="de.loskutov.dh.views.DataHierarchyView">
          <action
                class="de.loskutov.dh.actions.PinViewAction"
-               icon="platform:/plugin/org.eclipse.search/icons/full/elcl16/pin_view.gif"
+               icon="icons/elcl16/pin_view.png"
                id="DataHierarchy.pinView"
                label="Pin the Data Hierarchy View"
                style="toggle"
@@ -48,7 +48,7 @@
          </action>
          <action
                class="de.loskutov.dh.actions.ExpandCollapseAction"
-               icon="platform:/plugin/org.eclipse.search/icons/full/elcl16/collapseall.gif"
+               icon="icons/elcl16/collapseall.png"
                id="DataHierarchy.collapseAll"
                label="Collapse All"
                style="push"
@@ -57,7 +57,7 @@
          </action>
          <action
                class="de.loskutov.dh.actions.ExpandCollapseAction"
-               icon="platform:/plugin/org.eclipse.search/icons/full/elcl16/expandall.gif"
+               icon="icons/elcl16/expandall.png"
                id="DataHierarchy.expandAll"
                label="Expand All"
                style="push"
@@ -66,8 +66,8 @@
          </action>
          <action
                class="de.loskutov.dh.actions.CancelSearchAction"
-               disabledIcon="platform:/plugin/org.eclipse.search/icons/full/dlcl16/stop.gif"
-               icon="platform:/plugin/org.eclipse.search/icons/full/elcl16/stop.gif"
+               disabledIcon="icons/dlcl16/stop.png"
+               icon="icons/elcl16/stop.png"
                id="DataHierarchy.cancelSearch"
                label="Cancel Current Search"
                style="push"
@@ -77,8 +77,8 @@
          <action
                class="de.loskutov.dh.actions.SearchAgainAction"
                definitionId="org.eclipse.ui.file.refresh"
-               disabledIcon="platform:/plugin/org.eclipse.search/icons/full/dlcl16/search_again.gif"
-               icon="platform:/plugin/org.eclipse.search/icons/full/elcl16/search_again.gif"
+               disabledIcon="icons/dlcl16/search_again.png"
+               icon="icons/elcl16/search_again.png"
                id="DataHierarchy.searchAgain"
                label="Search Again"
                style="push"
@@ -225,7 +225,7 @@
          <action
                class="de.loskutov.dh.actions.SearchAgainAction"
                definitionId="org.eclipse.ui.file.refresh"
-               icon="platform:/plugin/org.eclipse.search/icons/full/elcl16/search_again.gif"
+               icon="icons/elcl16/search_again.png"
                id="DataHierarchy.action1"
                label="Search Again"
                menubarPath="group.search">
