@@ -6,22 +6,21 @@
       provider-name="Andrey Loskutov"
       plugin="de.loskutov.DataHierarchy">
 
-   <description url="http://andrei.gmxhome.de/datahierarchy/index.html">
+   <description url="https://github.com/iloveeclipse/datahierarchy/wiki">
       If you know the Call Hierarchy plugin, you will find the Data Hierarchy very similar. It searches selected Java classes for declared fields, and starting with the found &quot;Data&quot; it recursively looks for fields which are declared on found classes (&quot;Hierarchy&quot;). At the end you can see kind of &quot;Data Hierarchy&quot; tree.
    </description>
 
-   <copyright url="http://andrei.gmxhome.de/datahierarchy/copyright.html">
-      Copyright (c)2002 - 2015 by Andrey Loskutov &lt;Loskutov@gmx.de&gt;.
-All rights reserved.
+   <copyright url="..">
+      Copyright (c) 2004-2020 by Andrey Loskutov Loskutov@gmx.de
+   All rights reserved.
    </copyright>
 
-   <license url="http://www.eclipse.org/legal/epl-v10.html">
-      Copyright (c) 2002 - 2015 Andrey Loskutov, licensed under the Eclipse Public License 1.0.
+   <license url="https://www.eclipse.org/legal/epl-2.0/">
+      Copyright (c) 2004 - 2020 Andrey Loskutov, licensed under the Eclipse Public License 2.0.
    </license>
 
    <url>
-      <update label="Andrey Loskutov plugins site" url="http://andrei.gmxhome.de/eclipse/"/>
-      <discovery label="Andrey Loskutov plugins site" url="http://andrei.gmxhome.de/eclipse/"/>
+      <update label="Andrey Loskutov Eclipse plugins" url="https://raw.githubusercontent.com/iloveeclipse/plugins/latest/"/>
    </url>
 
    <requires>

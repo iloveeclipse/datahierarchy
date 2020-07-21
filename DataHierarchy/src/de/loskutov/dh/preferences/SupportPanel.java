@@ -52,33 +52,20 @@ public class SupportPanel {
         Link link = new Link(commonPanel, SWT.NONE);
         link.setFont(font);
         link.setText(" - <a>visit homepage</a>");
-        link.setToolTipText("You need just a sense of humor!");
         link.addListener (SWT.Selection, new Listener () {
             @Override
             public void handleEvent(Event event) {
-                handleUrlClick("http://andrei.gmxhome.de/datahierarchy");
+                handleUrlClick("https://github.com/iloveeclipse/plugins/wiki/Data-Hierarchy");
             }
         });
 
         link = new Link(commonPanel, SWT.NONE);
         link.setFont(font);
         link.setText(" - <a>report issue or feature request</a>");
-        link.setToolTipText("You need a valid google account at google.com!");
         link.addListener (SWT.Selection, new Listener () {
             @Override
             public void handleEvent(Event event) {
                 handleUrlClick("https://github.com/iloveeclipse/datahierarchy/issues");
-            }
-        });
-
-        link = new Link(commonPanel, SWT.NONE);
-        link.setFont(font);
-        link.setText(" - <a>add to your Openhub software stack</a>");
-        link.setToolTipText("You need a valid Ohloh account at ohloh.net!");
-        link.addListener (SWT.Selection, new Listener () {
-            @Override
-            public void handleEvent(Event event) {
-                handleUrlClick("https://www.openhub.net/p/DataHierarchy");
             }
         });
 
